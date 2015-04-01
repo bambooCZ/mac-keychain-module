@@ -42,7 +42,9 @@ var pass = getPasswordForAccount("foo.com", "bar");
 ### MacKeychainModule.getAccountsForHost(host)
 
 Parameter {String} host - hostname of our interest
+
 Return value {Array} - array of accounts (see account below)
+
 
 This method will list all stored accounts for given *host*
 
@@ -56,10 +58,18 @@ This method will return the password from keychain item identified by *ref*
 ### account
 
 account.username {String} Username
+
 account.path {String} Path part of URL
+
 account.port {Number} Port number
+
 account.protocol {String} Protocol part of URL
+
 account.ref {String} Base64 encoded persistentRef of the keychain item
 
+
 **No password in account? Why?**
-Because reading password can show dialog to grant access to the password. This can be unwanted. Password can be obtained by calling ```MacKeychainModule.getPasswordForRef(account.ref)```
+
+Because reading password can show dialog to grant access to the password. This can be unwanted. Password can be obtained by calling:
+
+```MacKeychainModule.getPasswordForRef(account.ref)```

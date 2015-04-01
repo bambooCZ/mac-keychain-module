@@ -1,5 +1,7 @@
 # MacKeychainModule
 
+> I am not a C++ guy, feel free to improve this
+
 V8 module for accessing Mac OS X Keychain directly from JavaScript. This way it is more secure than using */usr/bin/security*, because when user selects *Always allow* option, he allows only your app to read the password, not to whoever can launch */usr/bin/security*.
 
 ## Building
@@ -65,4 +67,6 @@ This method will return the password from keychain item identified by *ref*
 
 Because reading password can show dialog to grant access to the password. This can be unwanted. Password can be obtained by calling:
 
-```MacKeychainModule.getPasswordForRef(account.ref)```
+```
+MacKeychainModule.getPasswordForRef(account.ref)
+```

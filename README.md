@@ -51,17 +51,17 @@ This method will list all stored accounts for given *host*
 ### MacKeychainModule.getPasswordForRef(ref)
 
 - Parameter {String} **ref** - Base64 encoded persistentRef of the keychain item
-- Return value - {String|null} the password
+- Return value {String|null} - the password
 
 This method will return the password from keychain item identified by *ref*
 
 ### account
 
-- account.**username** {String} Username
-- account.**path** {String} Path part of URL
-- account.**port** {Number} Port number
-- account.**protocol** {String} Protocol part of URL
-- account.**ref** {String} Base64 encoded persistentRef of the keychain item
+- account.**username** {String} - Username
+- account.**path** {String} - Path part of URL
+- account.**port** {Number} - Port number
+- account.**protocol** {String} - Protocol part of URL
+- account.**ref** {String} - Base64 encoded persistentRef of the keychain item
 
 **No password in account? Why?**
 

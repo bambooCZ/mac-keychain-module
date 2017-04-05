@@ -2,26 +2,23 @@
 
 > I am not a C++ guy, feel free to improve this
 
-V8 module for accessing Mac OS X Keychain directly from JavaScript. This way it is more secure than using */usr/bin/security*, because when user selects *Always allow* option, he allows only your app to read the password, not to whoever can launch */usr/bin/security*.
+Node module for accessing macOS Keychain directly from JavaScript. This way it is more secure than using */usr/bin/security*, because when user selects *Always allow* option, he allows only your app to read the password, not to whoever can launch */usr/bin/security*.
 
 ## Building
 
-```Bash
-
+```bash
 cd MacKeychainModule ;
 sudo npm install -g nw-gyp ;
-nw-gyp configure --target=0.11.3 --arch=i386 ;
-nw-gyp build ;
-
+nw-gyp configure --target=0.21.4 --arch=x64 ;
+nw-gyp build --target=0.21.4;
 ```
 
 Result will be in *build/Release* directory
 
 ## Usage example
 
-```JavaScript
-
-var MacKeychainModule = require('./build/Release/MacKeychainModule');
+```javascript
+var MacKeychainModule = require('./build/Release/MacKeychainModule.node');
 
 var getPasswordForAccount = function (host, username) {
     var accounts = MacKeychainModule.getAccountsForHost(host);
@@ -35,9 +32,8 @@ var getPasswordForAccount = function (host, username) {
 }
 
 var pass = getPasswordForAccount("foo.com", "bar");
-// Variable pass contains password for user *bar* at server *foo.com*
-
 ```
+Variable now contains password for user *bar* at server *foo.com*
 
 ## JavaScript API
 
